@@ -29,11 +29,6 @@ class PipelineJobBuilder {
                         }
                     }
                     scriptPath("Jenkinsfile")
-                    publishers {
-                        if (emails) {
-                            mailer emails.join(' ')
-                        }
-                    }
                 }
             }
         }

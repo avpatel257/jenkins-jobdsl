@@ -58,7 +58,8 @@ dependencies {
     testPlugins 'org.jenkins-ci.plugins:cvs:2.13'
     testPlugins 'org.jenkins-ci.plugins:ghprb:1.40.0'
     testPlugins 'org.jenkins-ci.plugins:token-macro:2.5'
-    testPlugins 'org.jenkins-ci.plugins.workflow:workflow-cps-global-lib:2.7'
+    testPlugins 'org.jenkins-ci.plugins.workflow:workflow-cps-global-lib:2.9'
+    testPlugins 'org.jenkins-ci.plugins.workflow:workflow-job:2.15'
 
     // Run the following script in the Script Console of your Jenkins instance to generate
     // the above testPlugins list. (adapted from https://git.io/fjpUs)
@@ -94,7 +95,4 @@ task resolveTestPlugins(type: Copy) {
 test {
     dependsOn tasks.resolveTestPlugins
     inputs.files sourceSets.jobs.groovy.srcDirs
-}
-10.times {
-    job('example' + it) {}
 }
